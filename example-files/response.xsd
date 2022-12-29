@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://roland.com/accounts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="GetAccountDetailsResponse" type="acc:GetAccountDetailsResponseType" xmlns:acc="http://roland.com/accounts"/>
+  <xs:complexType name="AccountDetailsType">
+    <xs:sequence>
+      <xs:element type="xs:long" name="id"/>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:double" name="sum"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetAccountDetailsResponseType">
+    <xs:sequence>
+      <xs:element type="acc:AccountDetailsType" name="AccountDetails" xmlns:acc="http://roland.com/accounts"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

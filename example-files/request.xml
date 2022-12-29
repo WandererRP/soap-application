@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetAccountDetailsRequest xmlns="http://roland.com/accounts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xsi:schemaLocation="http://roland.com/accounts account-details.xsd">
+    <id>123</id>
+</GetAccountDetailsRequest>
