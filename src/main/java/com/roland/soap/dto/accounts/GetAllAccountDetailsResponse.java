@@ -8,6 +8,8 @@
 
 package com.roland.soap.dto.accounts;
 
+import java.util.ArrayList;
+import java.util.List;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -25,7 +27,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="AccountDetails" type="{http://soap.roland.com/dto/accounts}AccountDetails"/&gt;
+ *         &lt;element name="AccountDetails" type="{http://soap.roland.com/dto/accounts}AccountDetails" maxOccurs="unbounded"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,34 +40,39 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "accountDetails"
 })
-@XmlRootElement(name = "GetAccountDetailsResponse")
-public class GetAccountDetailsResponse {
+@XmlRootElement(name = "GetAllAccountDetailsResponse")
+public class GetAllAccountDetailsResponse {
 
     @XmlElement(name = "AccountDetails", required = true)
-    protected AccountDetails accountDetails;
+    protected List<AccountDetails> accountDetails;
 
     /**
      * Gets the value of the accountDetails property.
      * 
-     * @return
-     *     possible object is
-     *     {@link AccountDetails }
-     *     
-     */
-    public AccountDetails getAccountDetails() {
-        return accountDetails;
-    }
-
-    /**
-     * Sets the value of the accountDetails property.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the accountDetails property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link AccountDetails }
-     *     
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getAccountDetails().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link AccountDetails }
+     * 
+     * 
      */
-    public void setAccountDetails(AccountDetails value) {
-        this.accountDetails = value;
+    public List<AccountDetails> getAccountDetails() {
+        if (accountDetails == null) {
+            accountDetails = new ArrayList<AccountDetails>();
+        }
+        return this.accountDetails;
     }
 
 }

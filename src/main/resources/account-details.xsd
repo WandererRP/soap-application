@@ -14,10 +14,27 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="AccountDetails" type="tns:AccountDetails"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetAllAccountDetailsRequest">
+        <xs:complexType>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetAllAccountDetailsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="AccountDetails" type="tns:AccountDetails" maxOccurs="unbounded"/>
 
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+
+
+
     <xs:complexType name="AccountDetails">
         <xs:sequence>
             <xs:element type="xs:long" name="id"/>
